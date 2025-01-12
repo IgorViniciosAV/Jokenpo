@@ -1,0 +1,21 @@
+.button__rules {
+    font-family: var(--primary-font);
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    font-size: 1em;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-inline: 2em;
+    padding-block: .6em;
+    margin-top: 4em;
+    transition: all 100ms ease-in;
+    opacity: 70%;
+}
+
+.button__rules:hover {
+    background-color: rgba(255, 255, 255, 0.11);
+    scale: 1.05;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Jokenpô</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <img class="logo__image" src="./images/logo.svg" alt="Logo de Rock,Paper,Scissors.">
+        </div>
+        <div class="header__score">
+            <span>Score</span>
+            <p>0</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main__box-top">
+            <label class="main__label">
+                <button>
+                    <img src="./images/icon-paper.svg" alt="">
+                </button>
+            </label>
+            <label class="main__label">
+                <button>
+                    <img src="./images/icon-scissors.svg" alt="">
+                </button>
+            </label>
+        </div>
+        <div class="main__box-bottom">
+            <label class="main__label">
+                <button>
+                    <img src="./images/icon-rock.svg" alt="">
+                </button>
+            </label>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <label class="footer__box">
+            <button class="button__rules">Rules</button>
+        </label>
+    </footer>
+
+    <section class="rules-section hidden">
+        <h1 class="rules__title">Rules</h1>
+        <img class="rules__image" src="./images/image-rules.svg" alt="Regras do jogo.">
+        <button class="rule__button-close">
+            <img src="./images/icon-close.svg" alt="">
+        </button>
+    </section>
+
+    <script src="./js/styles/rules-section.js"></script>
+    <script src="./js/styles/main-styles.js"></script>
+</body>
+
+</html>

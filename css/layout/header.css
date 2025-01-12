@@ -1,0 +1,44 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 75vw;
+    max-width: 80vw;
+    border: 3px solid var(--header-outline);
+    padding: .8em;
+    border-radius: 8px;
+}
+
+.logo__image {
+    width: 25vw;
+    opacity: 90%;
+    margin-left: 5px;
+}
+
+.header__score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding-inline: 1.2em;
+    padding-block: .5em;
+    border-radius: 5px;
+    min-width: 12vw;
+    min-height: 6vh;
+}
+
+.header__score span {
+    text-transform: uppercase;
+    color: var(--score-text);
+    font-size: .7em;
+    font-weight: 800;
+    letter-spacing: 1px;
+    opacity: 80%;
+}
+
+.header__score p {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--dark-text);
+}
