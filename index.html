@@ -23,31 +23,42 @@
 
     <main class="main">
         <div class="main__box-top">
-            <label class="main__label">
+            <label class="main__label label-highlight label-0">
                 <button>
-                    <img src="./images/icon-paper.svg" alt="">
+                    <span style="opacity: 0;">-</span>
                 </button>
+                <span class="player-identifier span1 hidden">You Picked</span>
             </label>
-            <label class="main__label">
+
+            <label class="label-machine main__label label-1">
                 <button>
-                    <img src="./images/icon-scissors.svg" alt="">
+                    <span style="opacity: 0;">-</span>
                 </button>
+                <span class="player-identifier span2 hidden">The House Picked</span>
             </label>
         </div>
+
         <div class="main__box-bottom">
-            <label class="main__label">
+            <label class="main__label label-2 ">
                 <button>
-                    <img src="./images/icon-rock.svg" alt="">
+                    <span style="opacity: 0;">-</span>
                 </button>
             </label>
         </div>
     </main>
 
-    <footer class="footer">
-        <label class="footer__box">
-            <button class="button__rules">Rules</button>
-        </label>
-    </footer>
+    <div class="flex">
+        <section class="game-finaly hidden">
+            <h1 class="game-result"></h1>
+            <button class="play-again">Play Again</button>
+        </section>
+
+        <footer class="footer">
+            <label class="footer__box">
+                <button class="button__rules">Rules</button>
+            </label>
+        </footer>
+    </div>
 
     <section class="rules-section hidden">
         <h1 class="rules__title">Rules</h1>
@@ -58,7 +69,8 @@
     </section>
 
     <script src="./js/styles/rules-section.js"></script>
-    <script src="./js/styles/main-styles.js"></script>
+    <script type="module" src="./js/styles/main-static.js"></script>
+    <script type="module" src="./js/styles/main-styles.js"></script>
 </body>
 
 </html>

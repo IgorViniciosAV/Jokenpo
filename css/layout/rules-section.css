@@ -30,7 +30,12 @@
     border-radius: 50%;
     margin-top: 6em;
     transition: all 150ms ease-in;
+    background: transparent;
 }
 .rule__button-close:hover {
     scale: 1.3;
+}
+
+.rule__button-close img {
+    scale: 1.2;
 }

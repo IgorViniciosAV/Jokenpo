@@ -3,7 +3,8 @@
 @import url('./layout/header.css');
 @import url('./layout/main.css');
 @import url('./layout/footer.css');
-@import url(./layout/rules-section.css);
+@import url('./layout/rules-section.css');
+@import url('./layout/game-finaly.css');
 
 body {
     display: flex;
@@ -20,6 +21,18 @@ body {
     font-weight: 600;
 }
 
+body > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+}
+
 .hidden {
     display: none;
+}
+
+.bg-hidden {
+    background: none;
 }

@@ -1,4 +1,7 @@
 .button__rules {
+    position: fixed;
+    left: 35vw;
+    bottom: 10vh;
     font-family: var(--primary-font);
     background: transparent;
     color: white;
@@ -10,7 +13,7 @@
     text-transform: uppercase;
     padding-inline: 2em;
     padding-block: .6em;
-    margin-top: 4em;
+    /* margin-top: 4em; */
     transition: all 100ms ease-in;
     opacity: 70%;
 }

@@ -1,0 +1,30 @@
+.game-finaly {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    position: relative;
+    bottom: 18vh;
+}
+
+.game-result {
+    color: white;
+    font-size: 3.5em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.play-again {
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 1em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-block: 1em;
+    min-width: 65vw;
+    border-radius: 8px;
+}
+
+.play-again:hover {
+    color: red;
+}
