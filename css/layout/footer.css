@@ -1,7 +1,7 @@
 .button__rules {
-    position: fixed;
-    left: 35vw;
-    bottom: 10vh;
+    position: absolute;
+    right: 32.5%;
+    bottom: 4em;
     font-family: var(--primary-font);
     background: transparent;
     color: white;

@@ -13,11 +13,14 @@ const buttonHighlight = document.querySelector('.label-highlight button');
 const gameFinalySection = document.querySelector('.game-finaly');
 const gameResultText = document.querySelector('.game-result');
 const playAgainButton = document.querySelector('.play-again');
+const playerScore = document.querySelector('.header__score p');
 const transformations = {
     paper: 0,
     scissors: 1,
     rock: 2
 };
+
+playerScore.textContent = 0;
 
 let buttonActive = true;
 
@@ -31,7 +34,7 @@ buttonsAction.forEach((buttonAction, index) => {
             playersIdentifier[0].classList.remove('hidden');
             setTimeout(() => {
                 playersIdentifier[1].classList.remove('hidden');
-            }, 2500);
+            }, 2000);
 
             //============================================
 
@@ -46,25 +49,30 @@ buttonsAction.forEach((buttonAction, index) => {
                 labelMachine.classList.add('bot-animated');
                 labelMachine.style.background = styleButtons[botMoveFormatted].bgColor;
                 labelMachine.style.boxShadow = styleButtons[botMoveFormatted].boxShadow;
-                
+
                 labelMachineBtn.style.background = styleButtons[botMoveFormatted].bgUrl;
                 labelMachineBtn.style.backgroundColor = 'white'
 
                 gameFinalySection.classList.remove('hidden');
+
+
+                console.log(gameResult);
+                if (gameResult === 'draw') {
+                    gameResultText.textContent = 'Empate!';
+
+                } else if (!gameResult) {
+                    gameResultText.textContent = 'You Lose!';
+                    if (playerScore.textContent > 0) {
+                        playerScore.textContent -= 1;
+                        playerScore -= 1;
+                    }
+
+                } else {
+                    gameResultText.textContent = 'You Win!';
+                    playerScore.textContent++;
+
+                }
             }, 1500)
-            
-            console.log(gameResult);
-            if (gameResult === 'draw') {
-                gameResultText.textContent = 'You Draw';
-                console.log('Empate');
-            } else if (!gameResult) {
-                gameResultText.textContent = 'You Lose';
-                console.log('Perdeu');
-                
-            } else {
-                gameResultText.textContent = 'You Win';
-                console.log('Parabens');
-            }
         }
         buttonActive = false;
     });
@@ -100,7 +108,6 @@ function botMoveFormatter(botMove) {
         return transformations[botMove];
     }
 }
-
 
 
 

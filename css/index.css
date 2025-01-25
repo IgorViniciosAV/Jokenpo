@@ -7,8 +7,9 @@
 @import url('./layout/game-finaly.css');
 
 body {
+    position: relative;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
     gap: 6em;
