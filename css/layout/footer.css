@@ -1,7 +1,7 @@
 .button__rules {
     position: absolute;
     right: 32.5%;
-    bottom: 4em;
+    bottom: 6em;
     font-family: var(--primary-font);
     background: transparent;
     color: white;
