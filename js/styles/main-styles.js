@@ -31,6 +31,7 @@ buttonsAction.forEach((buttonAction, index) => {
             mainBoxBottom.classList.add('hidden');
             labelMachine.classList.add('bot');
             labelMachineBtn.style.background = 'rgba(0, 0, 0, 0.26)'
+
             playersIdentifier[0].classList.remove('hidden');
             setTimeout(() => {
                 playersIdentifier[1].classList.remove('hidden');
@@ -47,15 +48,9 @@ buttonsAction.forEach((buttonAction, index) => {
             setTimeout(() => {
                 labelMachine.classList.remove('bot');
                 labelMachine.classList.add('bot-animated');
-                labelMachine.style.background = styleButtons[botMoveFormatted].bgColor;
-                labelMachine.style.boxShadow = styleButtons[botMoveFormatted].boxShadow;
-
-                labelMachineBtn.style.background = styleButtons[botMoveFormatted].bgUrl;
-                labelMachineBtn.style.backgroundColor = 'white'
+                labelMachineEfect(botMoveFormatted)
 
                 gameFinalySection.classList.remove('hidden');
-
-
                 console.log(gameResult);
                 if (gameResult === 'draw') {
                     gameResultText.textContent = 'Empate!';
@@ -79,7 +74,12 @@ buttonsAction.forEach((buttonAction, index) => {
 });
 
 playAgainButton.addEventListener('click', () => {
-    location.reload();
+    gameReload();
+    labelHighlightEfect(0);
+    // labelMachineEfect(1);
+    labelMachine.classList.remove('bot-animated');
+    gameFinalySection.classList.add('hidden');
+    buttonActive = true;
 });
 
 function labelHighlightEfect(index) {
@@ -87,6 +87,14 @@ function labelHighlightEfect(index) {
     labelHighlight.style.boxShadow = styleButtons[index].boxShadow;
     buttonHighlight.style.background = styleButtons[index].bgUrl;
     buttonHighlight.style.backgroundColor = 'white';
+}
+
+function labelMachineEfect(botMoveFormatted) {
+    labelMachine.style.background = styleButtons[botMoveFormatted].bgColor;
+    labelMachine.style.boxShadow = styleButtons[botMoveFormatted].boxShadow;
+
+    labelMachineBtn.style.background = styleButtons[botMoveFormatted].bgUrl;
+    labelMachineBtn.style.backgroundColor = 'white'
 }
 
 function buttonActiveEfect(buttonAction, index) {
@@ -109,15 +117,7 @@ function botMoveFormatter(botMove) {
     }
 }
 
-
-
-
-
-
-
-
-
-function desativar() {
+function gameReload() {
     main.classList.remove('bg-hidden');
     mainBoxBottom.classList.remove('hidden');
     labelMachine.classList.remove('bot');
@@ -125,4 +125,3 @@ function desativar() {
         playerIdentifier.classList.add('hidden');
     });
 }
-
