@@ -20,13 +20,18 @@ const transformations = {
     rock: 2
 };
 
-playerScore.textContent = 0;
+const gameOverSound = new Audio('./sounds/game-over.mp3');
+const gameWinSound = new Audio('./sounds/game-win.mp3');
+const gameDrawSound = new Audio('./sounds/game-draw.mp3');
+const clickSound = new Audio('./sounds/click.mp3');
+gameWinSound.volume = 0.6;
 
 let buttonActive = true;
 
 buttonsAction.forEach((buttonAction, index) => {
     buttonAction.addEventListener('click', () => {
         if (buttonActive) {
+            clickSound.play();
             main.classList.add('bg-hidden');
             mainBoxBottom.classList.add('hidden');
             labelMachine.classList.add('bot');
@@ -54,18 +59,19 @@ buttonsAction.forEach((buttonAction, index) => {
                 console.log(gameResult);
                 if (gameResult === 'draw') {
                     gameResultText.textContent = 'Empate!';
+                    gameDrawSound.play();
 
                 } else if (!gameResult) {
                     gameResultText.textContent = 'You Lose!';
                     if (playerScore.textContent > 0) {
                         playerScore.textContent -= 1;
-                        playerScore -= 1;
+                        gameOverSound.play();
                     }
 
                 } else {
                     gameResultText.textContent = 'You Win!';
                     playerScore.textContent++;
-
+                    gameWinSound.play();
                 }
             }, 1500)
         }
@@ -76,7 +82,7 @@ buttonsAction.forEach((buttonAction, index) => {
 playAgainButton.addEventListener('click', () => {
     gameReload();
     labelHighlightEfect(0);
-    // labelMachineEfect(1);
+    labelMachineEfect(1);
     labelMachine.classList.remove('bot-animated');
     gameFinalySection.classList.add('hidden');
     buttonActive = true;
