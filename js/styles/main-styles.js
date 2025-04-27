@@ -31,16 +31,8 @@ let buttonActive = true;
 buttonsAction.forEach((buttonAction, index) => {
     buttonAction.addEventListener('click', () => {
         if (buttonActive) {
-            clickSound.play();
-            main.classList.add('bg-hidden');
-            mainBoxBottom.classList.add('hidden');
-            labelMachine.classList.add('bot');
-            labelMachineBtn.style.background = 'rgba(0, 0, 0, 0.26)'
-
-            playersIdentifier[0].classList.remove('hidden');
-            setTimeout(() => {
-                playersIdentifier[1].classList.remove('hidden');
-            }, 2000);
+            debugger
+            initEfect();
 
             //============================================
 
@@ -87,6 +79,19 @@ playAgainButton.addEventListener('click', () => {
     gameFinalySection.classList.add('hidden');
     buttonActive = true;
 });
+
+function initEfect() {
+    clickSound.play();
+    main.classList.add('bg-hidden');
+    mainBoxBottom.classList.add('hidden');
+    labelMachine.classList.add('bot');
+    labelMachineBtn.style.background = 'rgba(0, 0, 0, 0.26)'
+
+    playersIdentifier[0].classList.remove('hidden');
+    setTimeout(() => {
+        playersIdentifier[1].classList.remove('hidden');
+    }, 2000);
+}
 
 function labelHighlightEfect(index) {
     labelHighlight.style.background = styleButtons[index].bgColor;
